@@ -13,7 +13,7 @@ This challenge was preparatory to development of a Gym application.
 
 ## libs used:
   
- Redux, Reactotron, Json-server, Saga, Toastify Styled Components
+ Redux, Reactotron, Json-server, Saga, Toastify, Styled Components and more.
 
 ## Javascript Project:
  
