@@ -7,6 +7,10 @@ E-commerce Application developed on Rocketseat bootcamp 9.
   <img alt="GitHub language count" src="https://github.com/keepact/Rocketshoes/blob/master/web/app-screen.png">
 </p>
 
+<p align="center">
+  <img alt="GitHub language count" src="https://github.com/keepact/Rocketshoes/blob/master/mobile/app-mobile-screen.png">
+</p>
+
 ## React Project
 
 This challenge was preparatory to development of a Gym application.
