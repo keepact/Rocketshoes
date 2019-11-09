@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { ActivityIndicator, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { FlatList } from 'react-native';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { formatPrice } from '../../util/format';
 
@@ -45,7 +46,7 @@ class Home extends Component {
 
   render() {
     const { products } = this.state;
-    const { amount } = this.props;
+    const { amount, loading } = this.props;
 
     return (
       <Container>
@@ -66,8 +67,14 @@ class Home extends Component {
 
               <SubmitProduct onPress={() => this.handleAddProduct(item.id)}>
                 <ProductBasket>
-                  <Icon name="add-shopping-cart" color="#FFF" size={22} />
-                  <ProductAmount>{amount[item.id] || 0}</ProductAmount>
+                  {loading ? (
+                    <ActivityIndicator color="black" />
+                  ) : (
+                    <>
+                      <Icon name="add-shopping-cart" color="#FFF" size={22} />
+                      <ProductAmount>{amount[item.id] || 0}</ProductAmount>
+                    </>
+                  )}
                 </ProductBasket>
                 <ProductBasketText>ADICIONAR</ProductBasketText>
               </SubmitProduct>
@@ -85,6 +92,7 @@ const mapStateToProps = state => ({
 
     return amount;
   }, {}),
+  loading: state.cart.loading,
 });
 
 const mapDispatchToProps = dispatch =>
