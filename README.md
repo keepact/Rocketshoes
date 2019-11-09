@@ -17,7 +17,7 @@ This challenge was preparatory to development of a Gym application.
 
 ## Javascript Project:
  
- React JS
+ React and React Native.
 
 ## Scripts
 
