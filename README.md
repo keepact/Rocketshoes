@@ -4,7 +4,7 @@ E-commerce Application developed on Rocketseat bootcamp 9.
 ### App Screen
 
 <p align="center">
-  <img alt="GitHub language count" src="https://github.com/keepact/Rocketshoes/blob/master/app-screen.png">
+  <img alt="GitHub language count" src="https://github.com/keepact/Rocketshoes/blob/master/web/app-screen.png">
 </p>
 
 ## React Project
