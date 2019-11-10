@@ -34,3 +34,10 @@ export function updateAmountSuccess(id, amount) {
     amount,
   };
 }
+
+export function resetCart(item) {
+  return {
+    type: '@cart/RESET',
+    item,
+  };
+}

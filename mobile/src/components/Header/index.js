@@ -10,7 +10,7 @@ import {
   ProductCartItem,
 } from './styles';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/images/logo.png';
 
 export default function Header({ navigation }) {
   const cartSize = useSelector(state => state.cart.length);

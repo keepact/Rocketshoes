@@ -59,3 +59,9 @@ export const ProductBasketText = styled.Text`
   font-weight: bold;
   color: #fff;
 `;
+
+export const AnimationContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+  padding-top: 50%;
+`;

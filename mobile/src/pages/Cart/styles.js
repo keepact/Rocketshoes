@@ -120,15 +120,16 @@ export const TotalPrice = styled.Text`
   margin-top: 5px;
 `;
 
-export const EmptyCart = styled.View`
-  flex: 1;
+export const AnimationContainer = styled.View`
+  background: #fff;
   align-items: center;
   justify-content: center;
 `;
 
-export const EmptyCartText = styled.Text`
-  font-size: 22px;
+export const AnimationText = styled.Text`
+  font-size: 26px;
   font-weight: bold;
-  margin: 10px 10px;
   text-align: center;
+  margin-top: -50px;
+  padding-bottom: 50px;
 `;
