@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { ScrollView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -56,6 +56,8 @@ export default function Cart({ navigation }) {
 
   const dispatch = useDispatch();
 
+  const cartSize = useMemo(() => cart.length, [cart]);
+
   function increment(product) {
     dispatch(CartActions.updateAmountRequest(product.id, product.amount + 1));
   }
@@ -85,7 +87,7 @@ export default function Cart({ navigation }) {
         </AnimationContainer>
       ) : (
         <>
-          {cart.length > 0 ? (
+          {cartSize > 0 ? (
             <ScrollView>
               <ProductList>
                 {cart.map(product => (
