@@ -93,3 +93,13 @@ export const Total = styled.div`
     margin-left: 5px;
   }
 `;
+
+export const AnimationContainer = styled.div`
+  text-align: center;
+
+  h2 {
+    font-size: 26px;
+    margin-top: 20px;
+    padding: 10px;
+  }
+`;
