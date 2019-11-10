@@ -10,7 +10,6 @@
 /coverage
 
 # VSCode
-
 /web/.vscode
 /mobile/.vscode
 
