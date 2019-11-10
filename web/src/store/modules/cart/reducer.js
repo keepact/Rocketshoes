@@ -1,7 +1,11 @@
 import produce from 'immer';
 
-export default function cart(state = [], action) {
+const cartDefaultState = [];
+
+export default function cart(state = cartDefaultState, action) {
   switch (action.type) {
+    case '@cart/RESET':
+      return cartDefaultState;
     case '@cart/ADD_SUCCESS':
       return produce(state, draft => {
         const { product } = action;
