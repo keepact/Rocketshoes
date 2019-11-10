@@ -44,11 +44,13 @@ export default function Cart() {
     dispatch(CartActions.updateAmountRequest(product.id, product.amount - 1));
   }
 
-  function handleFinhesed() {
+  function handleFinhesed(product) {
     setFinished(true);
 
+    dispatch(CartActions.resetCart(product));
+
     window.setTimeout(() => {
-      window.location.href = 'http://localhost:3000';
+      window.location.href = '/';
     }, 2500);
   }
 
