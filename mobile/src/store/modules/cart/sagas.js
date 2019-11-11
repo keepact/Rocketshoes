@@ -21,8 +21,8 @@ function* addToCart({ id }) {
 
   if (amount > stockAmount) {
     Alert.alert(
-      'Stock not available',
-      "Don't let that discourage you, choose another product you like :)",
+      'Quantidade solicitada fora de estoque',
+      'Não fique desmotivado, procure outro tênis do seu gosto.',
       [
         {
           text: 'OK',
@@ -57,8 +57,8 @@ function* updateAmount({ id, amount }) {
 
   if (amount > stockAmount) {
     Alert.alert(
-      'Stock not available',
-      "Don't let that discourage you, choose another product you like :)",
+      'Quantidade solicitada fora de estoque',
+      'Não fique desmotivado, procure outro tênis do seu gosto.',
       [
         {
           text: 'OK',

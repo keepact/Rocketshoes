@@ -60,7 +60,7 @@ export default function Cart() {
     <Container>
       {finished ? (
         <AnimationContainer>
-          <Animation animation={successAnimation} size={200} autoplay={false} />
+          <Animation animation={successAnimation} size={200} autoplay loop />
           <h2>Sua compra foi processada, obrigado pela confiança!</h2>
         </AnimationContainer>
       ) : (
