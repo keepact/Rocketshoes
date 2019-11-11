@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+export const AnimationContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vw;
+`;
+
 export const ProductList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

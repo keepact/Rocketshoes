@@ -9,7 +9,7 @@ import Animation from '../../components/Animation';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-import { ProductList } from './styles';
+import { ProductList, AnimationContainer } from './styles';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -50,12 +50,9 @@ export default function Home() {
   return (
     <>
       {loading ? (
-        <Animation
-          animation={loadingAnimation}
-          size={380}
-          autoplay={false}
-          loop={false}
-        />
+        <AnimationContainer>
+          <Animation animation={loadingAnimation} size={380} autoplay loop />
+        </AnimationContainer>
       ) : (
         <ProductList>
           {products.map(product => (
