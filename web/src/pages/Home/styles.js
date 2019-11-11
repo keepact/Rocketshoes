@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { darken } from 'polished';
 
 export const AnimationContainer = styled.div`
@@ -38,39 +38,57 @@ export const ProductList = styled.ul`
       font-weight: bold;
       margin: 5px 0 20px;
     }
+  }
+`;
 
-    button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: auto;
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
-      display: flex;
-      align-items: center;
-      transition: background 0.2s;
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
-      &:hover {
-        background: ${darken(0.03, '#7159c1')};
-      }
+export const SubmitButton = styled.button.attrs({
+  type: 'button',
+})`
+  background: #7159c1;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: auto;
 
-      div {
-        display: flex;
-        align-items: center;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
 
-        svg {
-          margin-right: 5px;
-        }
-      }
+  &:hover {
+    background: ${darken(0.03, '#7159c1')};
+  }
 
-      span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
-      }
+  div[class='spinner'] {
+    svg {
+      animation: ${rotate} 2s linear infinite;
     }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.1);
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  span {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
   }
 `;
