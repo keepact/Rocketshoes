@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdShoppingCart } from 'react-icons/md';
+import { FaSpinner } from 'react-icons/fa';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
@@ -9,7 +10,7 @@ import Animation from '../../components/Animation';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-import { ProductList, AnimationContainer } from './styles';
+import { ProductList, AnimationContainer, SubmitButton } from './styles';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -22,6 +23,8 @@ export default function Home() {
       return sumAmount;
     }, {})
   );
+
+  const catalogLoading = useSelector(state => state.catalog.loading);
 
   const dispatch = useDispatch();
 
@@ -61,17 +64,19 @@ export default function Home() {
               <strong>{product.title}</strong>
               <span>{product.priceFormatted}</span>
 
-              <button
-                type="button"
-                onClick={() => handleAddProduct(product.id)}
-              >
-                <div>
-                  <MdShoppingCart size={16} color="#FFF" />{' '}
-                  {amount[product.id] || 0}
-                </div>
-
+              <SubmitButton onClick={() => handleAddProduct(product.id)}>
+                {catalogLoading.includes(product.id) ? (
+                  <div className="spinner">
+                    <FaSpinner color="#FFF" size={14} />
+                  </div>
+                ) : (
+                  <div>
+                    <MdShoppingCart size={16} color="#FFF" />{' '}
+                    {amount[product.id] || 0}
+                  </div>
+                )}
                 <span>ADICIONAR AO CARRINHO</span>
-              </button>
+              </SubmitButton>
             </li>
           ))}
         </ProductList>

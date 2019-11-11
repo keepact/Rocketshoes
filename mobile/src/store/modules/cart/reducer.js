@@ -9,6 +9,11 @@ export default function cart(state = cartDefaultState, action) {
     case '@cart/ADD_SUCCESS':
       return produce(state, draft => {
         const { item } = action;
+        const productIndex = draft.findIndex(p => p.id === item.id);
+
+        if (productIndex >= 0) {
+          draft[productIndex].loading = false;
+        }
 
         draft.push(item);
       });

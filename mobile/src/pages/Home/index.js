@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -28,6 +28,7 @@ import {
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const amount = useSelector(state =>
     state.cart.reduce((sunAmount, product) => {
       sunAmount[product.id] = product.amount;
@@ -35,6 +36,8 @@ export default function Home() {
       return sunAmount;
     }, {})
   );
+
+  const catalogLoading = useSelector(state => state.catalog.loading);
 
   const dispatch = useDispatch();
 
@@ -84,8 +87,14 @@ export default function Home() {
 
               <SubmitProduct onPress={() => handleAddProduct(item.id)}>
                 <ProductBasket>
-                  <Icon name="add-shopping-cart" color="#FFF" size={22} />
-                  <ProductAmount>{amount[item.id] || 0}</ProductAmount>
+                  {catalogLoading.includes(item.id) ? (
+                    <ActivityIndicator color="black" />
+                  ) : (
+                    <>
+                      <Icon name="add-shopping-cart" color="#FFF" size={22} />
+                      <ProductAmount>{amount[item.id] || 0}</ProductAmount>
+                    </>
+                  )}
                 </ProductBasket>
                 <ProductBasketText>ADICIONAR</ProductBasketText>
               </SubmitProduct>

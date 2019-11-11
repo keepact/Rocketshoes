@@ -45,6 +45,8 @@ function* addToCart({ id }) {
 
     yield put(addToCartSuccess(data));
 
+    // yield call(AsyncStorage.setItem, '@Rocketshoes:cart', valor);
+
     NavigationService.navigate('Cart');
   }
 }
@@ -71,7 +73,15 @@ function* updateAmount({ id, amount }) {
   yield put(updateAmountSuccess(id, amount));
 }
 
+// function* initSaga() {
+//   // pegar os dados do teu storage do carrinho
+//   // repassar pro reducer
+
+//   yield put(cartLoadedSuccess(cart));
+// }
+
 export default all([
+  // initSaga,
   takeLatest('@cart/ADD_REQUEST', addToCart),
   takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
 ]);
