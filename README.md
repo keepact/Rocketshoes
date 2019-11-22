@@ -35,7 +35,7 @@ It is a simple Ecommerce App. There are 2 screens:
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn install`
 
 Runs the app in the development mode.<br />
 
