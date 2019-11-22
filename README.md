@@ -20,7 +20,7 @@ It is a simple Ecommerce App. There are 2 screens:
 <strong>2</strong> - Cart with the shoes selected
 
 ## libs used:
-  
+
 <strong>Web</strong>: history, react-icons, react-lottie, react-router-dom, react-toastify, reactotron-react-js
 
 <strong>Mobile</strong>: @react-native-community/async-storage, intl, lottie-ios, lottie-react-native, react-native-vector-icons, react-navigation, react-navigation-stack, reactotron-react-native
