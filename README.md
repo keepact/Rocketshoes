@@ -11,13 +11,21 @@ E-commerce Application developed on Rocketseat bootcamp 9.
   <img alt="GitHub language count" src="https://github.com/keepact/Rocketshoes/blob/master/mobile/app-mobile-screen.png">
 </p>
 
-## React Project
+## What is this application about?
 
-This challenge was preparatory to development of a Gym application.
+It is a simple Ecommerce App. There are 2 screens: 
+
+<strong>1</strong> - List of all shoes 
+
+<strong>2</strong> - Cart with the shoes selected
 
 ## libs used:
   
- Redux, Reactotron, Json-server, Saga, Toastify, Styled Components and more.
+<strong>Web</strong>: history, react-icons, react-lottie, react-router-dom, react-toastify, reactotron-react-js
+
+<strong>Mobile</strong>: @react-native-community/async-storage, intl, lottie-ios, lottie-react-native, react-native-vector-icons, react-navigation, react-navigation-stack, reactotron-react-native
+
+<strong>Both</strong>: axios, immer, polished, prop-types, react-redux, reactotron-redux, reactotron-redux-saga, redux, redux-saga, styled-components
 
 ## Javascript Project:
  
